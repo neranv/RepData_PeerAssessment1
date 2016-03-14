@@ -108,10 +108,8 @@ for(index in 1:nrow(activity_data)) {
     activity_imputed[index,'steps'] <- ifelse(mysteps==0,
                                               getmean(mydate),mysteps)
 }
-#Missing steps is zero now
-n_missing_imputed <- sum(complete.cases(activity_imputed))
 ```
-Total number of missing values in imputed data = 15264
+
 
 
 ```r

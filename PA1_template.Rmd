@@ -105,10 +105,9 @@ for(index in 1:nrow(activity_data)) {
     activity_imputed[index,'steps'] <- ifelse(mysteps==0,
                                               getmean(mydate),mysteps)
 }
-#Missing steps is zero now
-n_missing_imputed <- sum(complete.cases(activity_imputed))
+
 ```
-Total number of missing values in imputed data = `r n_missing_imputed`
+
 
 ```{r warning=FALSE,message=FALSE}
 grouped_byday_imputed <- activity_imputed %>% group_by(date)

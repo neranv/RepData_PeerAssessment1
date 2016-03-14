@@ -268,11 +268,7 @@ for(index in 1:nrow(activity_data)) {
     activity_imputed[index,&#39;steps&#39;] &lt;- ifelse(mysteps==0,
                                               getmean(mydate),mysteps)
 }
-#Missing steps is zero now
-n_missing_imputed &lt;- sum(complete.cases(activity_imputed))
 </code></pre>
-
-<p>Total number of missing values in imputed data = 15264</p>
 
 <pre><code class="r">grouped_byday_imputed &lt;- activity_imputed %&gt;% group_by(date)
 steps_byday_imputed &lt;- summarize(grouped_byday_imputed, 
